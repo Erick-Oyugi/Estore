@@ -2,13 +2,15 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import helmet from 'helmet'
 import routes from './routes/routes.js'
+import cors from 'cors';
 
 
 
 const app = express();
 // For parsing application/json
 app.use(express.json());
-app.use(helmet());
+app.use(cors())
+
 
 app.use(
     helmet.contentSecurityPolicy({
