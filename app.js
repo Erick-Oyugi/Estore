@@ -9,6 +9,17 @@ const app = express();
 // For parsing application/json
 app.use(express.json());
 app.use(helmet());
+
+app.use(
+    helmet.contentSecurityPolicy({
+      useDefaults: true,
+      directives: {
+        "img-src": ["'self'", "https: data:"],
+        'script-src': ["'self'", "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"] ,
+        'script-src-elem':  ["'self'", "https://cdn.jsdelivr.net"]
+      }
+    })
+  )
 // For parsing application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -17,10 +28,6 @@ app.set('view engine', 'hbs')
 
 
 
-app.post('/profile', function (req, res) {
-    name : req.body.name
-    res.send();
-});
 
 
 

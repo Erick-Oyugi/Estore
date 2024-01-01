@@ -5,9 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <title>E-store</title>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+<script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+    
+
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   </head>
   <body>
+    <style>body{font-family: 'Poppins';}
+        ion-content {
+            margin-top: 3rem !important;
+        }
+        .scrolling-wrapper {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+
+  .card {
+    display: inline-block;
+  }
+}
+    </style>
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
        <a class="navbar-brand" href="#">
@@ -29,12 +51,100 @@
           <a class="nav-link" href="#">Apis</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled">Developer</a>
+          <a class="nav-link">Developer</a>
+        </li>
+
+         <li class="nav-item">
+          <a class="nav-link" href="/categories">Categories</a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
+
+
+
+{{!-- content --}}
+
+<ion-content class="content">
+    <ion-grid>
+
+
+        <ion-row>
+               <ion-col>
+                <ion-title>
+                    Popular Adverts
+                </ion-title>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-card>
+                    <ion-card-content>
+                            <img src="https://cdn.dribbble.com/users/13466944/screenshots/19698467/media/0feafe746c54519b1de9b4680819bc51.jpg?resize=400x0"/>
+                    </ion-card-content>
+                </ion-card>
+                  
+            </ion-col>
+
+
+              <ion-col>
+                <ion-card>
+                    <ion-card-content>
+                            <img src="https://s.tmimgcdn.com/scr/800x500/166100/culinary-food-instagram-banner-template-post-for-social-media_166111-original.jpg"/>
+                    </ion-card-content>
+                </ion-card>
+                  
+            </ion-col>
+
+
+              <ion-col>
+                <ion-card>
+                    <ion-card-content>
+                            <img src="https://s.tmimgcdn.com/scr/800x500/258900/fresh-fruits-social-media-post-banner-template_258930-original.jpg"/>
+                    </ion-card-content>
+                </ion-card>
+                  
+            </ion-col>
+        </ion-row>
+
+
+           <ion-row>
+               <ion-col>
+                <ion-title>
+                    Top Charts
+                </ion-title>
+            </ion-col>
+        </ion-row>
+
+
+        <ion-row>
+            <ion-col>
+                <div class="scrolling-wrapper">
+                      <div class="card">
+                    
+                        <ion-card>
+                        <h2>{{#each result.data.apps.app_id}}</h2>
+                    
+                        </ion-card>
+                    
+                                 {{/each}}</div>
+                   
+</div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
+
+
+
+
+
+
+
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   </body>
 </html>

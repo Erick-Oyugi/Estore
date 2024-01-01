@@ -2,26 +2,32 @@ import axios from 'axios'
 
 const AppList = async (req, res) => {
 
-  axios({
-    method: 'get',
-    url: 'https://api.dataforseo.com/v3/app_data/google/app_listings/categories',
-    auth: {
-        username: 'erickoyugi70@gmail.com',
-        password: 'dd4a08f7293f888b'
-    },
-    headers: {
-        'content-type': 'application/json'
+    const options = {
+      method: 'GET',
+      url: 'https://store-apps.p.rapidapi.com/search',
+      params: {
+        q: 'notes',
+        region: 'us',
+        language: 'en'
+      },
+      headers: {
+        'X-RapidAPI-Key': 'ce1144368fmsh11dca8c9ce78b66p174caajsne77e09551f6f',
+        'X-RapidAPI-Host': 'store-apps.p.rapidapi.com'
+      }
+    };
+    
+    try {
+        const response = await axios.request(options);
+
+
+        console.log(response.data);
+        let result = response.data;
+
+      
+        res.render("index", result)
+    } catch (error) {
+        console.error(error);
     }
-}).then(function (response) {
-    var result = response['data']['tasks'][0]['result'];
-    // Result data
-
-    res.send(result)
-    console.log(result);
-}).catch(function (error) {
-    console.log(error);
-});
-
 
 }
 

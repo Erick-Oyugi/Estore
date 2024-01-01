@@ -6,6 +6,10 @@ import DynamicQrCodeController from '../controllers/DynamicQRCode/Dynamic.contro
 import PinValidation from '../controllers/Kra/validation.controller.js'
 import Homepage from '../controllers/Home/home.controller.js'
 import AppList from '../controllers/AppList/Apps.controller.js'
+import CategoryList from '../controllers/CategoryList/category.controller.js'
+import CurrencyConverter from '../controllers/CurrencyConverter/currency.controller.js'
+import CurrenctListQuotes from '../controllers/CurrencyListQuotes/listqoutes.controller.js'
+import ExchangeCurrency from '../controllers/ExchangeCurrency/Exchange.controller.js'
 const router = express.Router()
 
 
@@ -24,7 +28,11 @@ router.post('/iprs')
 router.post('/crb')
 router.post('/pinvalidation', PinValidation)
 router.get('/', Homepage)
-router.post('/apps', AppList)
+router.get('/apps', AppList)
+router.get('/categories', CategoryList)
+router.post('/currencies', CurrencyConverter)
+router.post('/listquotes', CurrenctListQuotes)
+router.post('/exchange-currency', ExchangeCurrency)
 
 
 
