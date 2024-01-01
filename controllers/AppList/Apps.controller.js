@@ -24,7 +24,7 @@ const AppList = async (req, res) => {
         let result = response.data;
 
       
-        res.render("index", result)
+     res.send(result)
     } catch (error) {
         console.error(error);
     }
