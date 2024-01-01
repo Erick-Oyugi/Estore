@@ -13,6 +13,7 @@ app.use(helmet());
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(routes)
+app.set('view engine', 'hbs')
 
 
 

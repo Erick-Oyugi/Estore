@@ -21,6 +21,7 @@ router.post('/forex')
 router.post('/iprs')
 router.post('/crb')
 router.post('/pinvalidation', PinValidation)
+router.get('/', Homepage)
 
 
 
