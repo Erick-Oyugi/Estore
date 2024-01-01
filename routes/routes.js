@@ -5,6 +5,7 @@ import MpesaAuthentication from '../controllers/MpesaAuth/auth.controller.js'
 import DynamicQrCodeController from '../controllers/DynamicQRCode/Dynamic.controller.js'
 import PinValidation from '../controllers/Kra/validation.controller.js'
 import Homepage from '../controllers/Home/home.controller.js'
+import AppList from '../controllers/AppList/Apps.controller.js'
 const router = express.Router()
 
 
@@ -23,6 +24,7 @@ router.post('/iprs')
 router.post('/crb')
 router.post('/pinvalidation', PinValidation)
 router.get('/', Homepage)
+router.post('/apps', AppList)
 
 
 
