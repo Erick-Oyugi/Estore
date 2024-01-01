@@ -4,6 +4,7 @@ import TransactionalData from '../controllers/TransactionalData.js'
 import MpesaAuthentication from '../controllers/MpesaAuth/auth.controller.js'
 import DynamicQrCodeController from '../controllers/DynamicQRCode/Dynamic.controller.js'
 import PinValidation from '../controllers/Kra/validation.controller.js'
+import Homepage from '../controllers/Home/home.controller.js'
 const router = express.Router()
 
 
